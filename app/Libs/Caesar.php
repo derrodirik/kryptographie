@@ -1,7 +1,5 @@
 <?php
-
-
-namespace App\libs;
+namespace App\Libs;
 
 
 class Caesar
