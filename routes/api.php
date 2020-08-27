@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('caesar')->name('caesar.')->group(function () {
+	Route::post('encrypt', 'Api\CaesarController@encrypt');
+	Route::post('decrypt', 'Api\CaesarController@decrypt');
+	Route::post('crack', 'Api\CaesarController@crack');
 });

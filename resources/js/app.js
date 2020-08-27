@@ -8,12 +8,14 @@
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(VueRouter)
+Vue.use(BootstrapVue)
 
-import App from '../assets/js/App'
-import Hello from '../assets/js/Hello'
-import Home from '../assets/js/Home'
+import App from '../assets/js/views/App'
+import Home from '../assets/js/views/Home'
+import Caesar from '../assets/js/views/Caesar'
 
 const router = new VueRouter({
     mode: 'history',
@@ -24,9 +26,9 @@ const router = new VueRouter({
             component: Home
         },
         {
-            path: '/hello',
-            name: 'hello',
-            component: Hello,
+            path: '/caesar',
+            name: 'caesar',
+            component: Caesar,
         },
     ],
 });
