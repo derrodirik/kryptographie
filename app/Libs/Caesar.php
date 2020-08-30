@@ -2,6 +2,8 @@
 namespace App\Libs;
 
 
+use Illuminate\Support\Arr;
+
 class Caesar
 {
     /**
@@ -60,9 +62,12 @@ class Caesar
      */
     protected function run($string, $key)
     {
-        return implode('', array_map(function ($char) use ($key) {
-            return $this->shift($char, $key);
-        }, str_split($string)));
+    	$chars = [];
+        foreach (str_split($string) as $char) {
+        		array_push($chars, $this->shift($char, $key));
+		};
+
+        return implode($chars);
     }
 
     /**
