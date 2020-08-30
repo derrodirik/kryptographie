@@ -47,6 +47,13 @@
                         readonly=""
                         max-rows="10"
                     ></b-form-textarea>
+                    <b-link
+                        class="text-muted"
+                        v-clipboard:copy="encryptedResponse"
+                        v-clipboard:success="onCopy"
+                        v-clipboard:error="onCopyError"
+                        @mouseleave="copyLeaved"
+                    >{{copyState}}</b-link>
                 </b-form-group>
                 <b-form-group
                     label="Ausgabe"
@@ -58,6 +65,13 @@
                         readonly=""
                         max-rows="10"
                     ></b-form-textarea>
+                    <b-link
+                        class="text-muted"
+                        v-clipboard:copy="decryptedResponse"
+                        v-clipboard:success="onCopy"
+                        v-clipboard:error="onCopyError"
+                        @mouseleave="copyLeaved"
+                    >{{copyState}}</b-link>
                 </b-form-group>
                 <b-form-group
                     label="Ausgabe"
@@ -69,6 +83,13 @@
                         readonly=""
                         max-rows="10"
                     ></b-form-textarea>
+                    <b-link
+                        class="text-muted"
+                        v-clipboard:copy="crackedResponse"
+                        v-clipboard:success="onCopy"
+                        v-clipboard:error="onCopyError"
+                        @mouseleave="copyLeaved"
+                    >{{copyState}}</b-link>
                 </b-form-group>
                 <div class="text-right">
                     <b-button id="setExampleText" variant="secondary" @click="setExampleText">Beispiel Text einfügen</b-button>
@@ -98,7 +119,8 @@ export default {
             error: null,
             loading: false,
             params: null,
-            tabIndex: 0
+            tabIndex: 0,
+            copyState: 'Kopieren'
         };
     },
     methods: {
@@ -130,6 +152,15 @@ export default {
                     this.loading = false;
                     this.error = error.response.data.message || error.message;
                 });
+        },
+        onCopy() {
+            this.copyState = "Kopiert!";
+        },
+        onCopyError() {
+            this.copyState = "Kopieren nicht möglich";
+        },
+        copyLeaved() {
+            this.copyState = "Kopieren";
         },
         getData() {
             return {
