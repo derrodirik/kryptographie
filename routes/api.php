@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('caesar')->name('caesar.')->group(function () {
+Route::middleware('throttle:30,1')->prefix('caesar')->name('caesar.')->group(function () {
 	Route::post('encrypt', 'Api\CaesarController@encrypt');
 	Route::post('decrypt', 'Api\CaesarController@decrypt');
 	Route::post('crack', 'Api\CaesarController@crack');
