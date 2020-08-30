@@ -9,12 +9,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
+import VueClipboard from 'vue-clipboard2'
 
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
+Vue.use(VueClipboard)
 
 import App from '../assets/js/views/App'
-import Home from '../assets/js/views/Home'
 import Caesar from '../assets/js/views/Caesar'
 
 const router = new VueRouter({
@@ -22,8 +23,9 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            name: 'home',
-            component: Home
+            redirect: {
+                name: 'caesar'
+            }
         },
         {
             path: '/caesar',

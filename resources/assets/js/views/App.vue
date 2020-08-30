@@ -1,11 +1,6 @@
 <template>
     <div>
-        <h1>Vue Router Demo App</h1>
-
-        <p>
-            <router-link :to="{ name: 'home' }">Home</router-link> |
-            <router-link :to="{ name: 'caesar' }">Caesar</router-link>
-        </p>
+        <h1>Caesar Encryption</h1>
 
         <div class="container">
             <router-view></router-view>
