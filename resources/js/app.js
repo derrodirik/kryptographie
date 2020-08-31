@@ -11,9 +11,16 @@ import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
 import VueClipboard from 'vue-clipboard2'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faArrowRight } from '@fortawesome/pro-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faArrowRight)
+
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(VueClipboard)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import App from '../assets/js/views/App'
 import Caesar from '../assets/js/views/Caesar'
