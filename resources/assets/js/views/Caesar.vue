@@ -35,7 +35,7 @@
                         v-model="key"
                         type="number"
                         min="1"
-                        max="24"
+                        max="26"
                     ></b-form-input>
                 </b-form-group>
                 <b-form-group
