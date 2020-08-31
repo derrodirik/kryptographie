@@ -25,7 +25,7 @@ class ProcessCrypt extends FormRequest
     {
         return [
             'text' => ['required', 'string', 'max:3000'],
-			'key' => ['required', 'numeric', 'max:24']
+			'key' => ['required', 'numeric', 'max:26']
         ];
     }
 }
