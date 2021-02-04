@@ -1,5 +1,5 @@
 /*!
- * BootstrapVue Icons, generated from Bootstrap Icons 1.0.0
+ * BootstrapVue Icons, generated from Bootstrap Icons 1.2.2
  *
  * @link https://icons.getbootstrap.com/
  * @license MIT
@@ -7,7 +7,7 @@
  */
 
 /*!
- * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 
